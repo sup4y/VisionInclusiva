@@ -1,0 +1,274 @@
+/* Estilos/blog.css */
+
+/* RESET BÁSICO */
+body {
+  margin: 0;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  font-family: 'Text Style Atkinson Hyperlegible';
+  background: linear-gradient(135deg, #001C39, #004080);
+  color: white;
+}
+
+/* CABECERA Y MENÚ SUPERIOR */
+.top-header {
+  position: fixed;
+  background-color: transparent;
+  width: 100%;
+  z-index: 100;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem 0 1.5rem;
+}
+
+/* LOGO */
+.logo img {
+  margin-top: 5rem;
+  margin-left: 2rem;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 1rem;
+}
+
+/* MENÚ PRINCIPAL HORIZONTAL */
+.menu-horizontal {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-horizontal li a {
+  display: block;
+  padding: 1rem 1.25rem;
+  color: #FFD700; /* Amarillo */
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 5rem;
+  font-size: 1.5rem;
+}
+
+.menu-horizontal li a:hover {
+  color: #ffea00;
+}
+
+/* SUBMENÚ VERTICAL OCULTO POR DEFECTO */
+.menu-vertical {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  border: 2px dotted purple; /* Estilo de borde de contactanos.css */
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  width: 12rem;
+  border-radius: 0.5rem;
+}
+
+.menu-horizontal li.submenu:hover .menu-vertical {
+  display: block;
+}
+
+.menu-vertical li a {
+  display: block;
+  color: #FFD700;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-vertical li a:hover {
+  background-color: rgba(255, 255, 0, 0.2);
+  color: #fff;
+}
+
+/* SECCIÓN BLOG */
+.blog {
+  padding-top: 7rem; /* Ajustado para que no quede debajo del header fijo */
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto; /* Centrar la sección */
+}
+
+/* TÍTULO DE LA SECCIÓN BLOG */
+.blog h2 {
+  font-size: 3.5rem; /* Tamaño grande */
+  color: #FFD700; /* Amarillo */
+  margin-bottom: 2rem; /* Más espacio debajo del título */
+  font-weight: 900;
+  text-align: center; /* Centrar título de la sección */
+}
+
+/* CONTENIDO DEL BLOG (TEXTO E IMAGEN) */
+.blog-contenido {
+  display: flex;
+  flex-direction: row; /* Lado a lado en desktop */
+  gap: 2.5rem; /* Espacio entre texto e imagen */
+  align-items: flex-start; /* Alinear al inicio si las alturas varían */
+}
+
+.blog-texto {
+  flex: 1.5; /* Dar más espacio al texto que a la imagen */
+  line-height: 1.7; /* Mejorar legibilidad */
+}
+
+.blog-texto p {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.blog-imagen {
+  flex: 1; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.blog-imagen .imagen-fade { 
+  width: 100%;
+}
+
+.blog-imagen img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem; 
+}
+
+/* RESPONSIVE: MÓVILES */
+.menu-toggle {
+  display: none;
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  color: #FFD700;
+  cursor: pointer;
+  z-index: 110;
+  position: relative;
+}
+
+.menu-toggle.open {
+  color: #001C39;
+}
+
+@media (max-width: 768px) {
+  .menu-horizontal {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 5rem;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background-color: #FFD700;
+    padding-top: 2rem;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    z-index: 105;
+  }
+
+  .blog-contenido {
+    flex-direction: column; 
+    gap: 2rem;
+  }
+
+  .blog-texto,
+  .blog-imagen {
+    flex: none; 
+    width: 100%;
+  }
+
+  .menu-horizontal.active {
+    display: flex;
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-horizontal li a {
+    color: #001C39;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    margin-right: 0;
+    border-bottom: 1px solid #001C39;
+  }
+
+  .menu-horizontal li a:hover {
+    color: #004080;
+    background-color: #fff200;
+  }
+
+  .menu-vertical {
+    position: static;
+    background-color: transparent;
+    border: none;
+    padding-left: 1rem;
+  }
+
+  .submenu:hover .menu-vertical {
+    display: block;
+  }
+
+  .menu-vertical li a {
+    color: #001C39;
+    font-size: 1.6rem;
+    padding: 0.75rem 2rem;
+    border-bottom: 1px solid #001C39;
+  }
+
+  .menu-vertical li a:hover {
+    background-color: #fff200;
+    color: #004080;
+  }
+
+  body.overlay-active::before {
+    content: "";
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+
+  .blog {
+    padding-top: 6rem;
+  }
+
+  .blog h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-texto p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog h2 {
+    font-size: 2rem;
+  }
+  .blog-texto p {
+    font-size: 0.9rem;
+  }
+  .menu-horizontal li a {
+    font-size: 1.1rem; 
+  }
+  .logo img {
+    height: 8rem;
+    width: 8rem;
+    margin-top: 4rem;
+    margin-left: 1rem;
+  }
+  .top-header {
+    padding: 0 1.5rem 0 1rem;
+  }
+}

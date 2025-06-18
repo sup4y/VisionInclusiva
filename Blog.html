@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Lector Inclusivo</title>
+    <link rel="stylesheet" href="Estilos/Blog.css" />
+  </head>
+  <body>
+    <!-- MENÚ SUPERIOR -->
+    <nav class="top-header">
+      <a href="Index.html" class="logo"> 
+        <img src="Imagenes/Logo.png" alt="Logo" />
+      </a>
+
+      <!-- BOTÓN HAMBURGUESA -->
+      <button class="menu-toggle" aria-label="Abrir menú">
+        &#9776;
+      </button>
+
+      <!-- MENÚ DE NAVEGACIÓN -->
+      <ul class="menu-horizontal">
+        <li><a href="Index.html">INICIO</a></li>
+        <li class="submenu">
+          <a href="Conocenos.html">CONOCENOS</a>
+          <ul class="menu-vertical">
+            <li><a href="Conocenos.html#quienes-somos">¿Quienes Somos?</a></li>
+            <li><a href="Conocenos.html#que-hacemos">¿Que hacemos?</a></li>
+          </ul>
+        </li>
+        <li><a href="Comunidad.html">COMUNIDAD</a></li>
+        <li><a href="Contactanos.html">CONTACTANOS</a></li>
+        <li><a href="Blog.html">BLOG</a></li> 
+      </ul>
+    </nav>
+
+    <!-- SECCIÓN BLOG -->
+    <section class="blog">
+      <div class="blog-fondo"> 
+        <div class="blog-contenido"> 
+          <div class="blog-texto"> 
+            <h2>BLOG</h2>
+            <p>
+              En nuestro blog compartimos artículos, novedades, consejos de accesibilidad, avances del proyecto y testimonios de nuestros usuarios. ¡Sigue leyendo y conoce más sobre la inclusión digital!
+            </p>
+          </div>
+          <div class="blog-imagen"> 
+            <div class="imagen-fade">
+              <img src="Imagenes/Blog.png" alt="Blog Lector Inclusivo" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="JS/Blog.js"></script>
+  </body>
+</html>

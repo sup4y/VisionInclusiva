@@ -1,0 +1,65 @@
+<!-- Archivo principal de la página de inicio del sitio Lector Inclusivo, que contiene la estructura HTML para la navegación, sección de bienvenida y enlaces a estilos y scripts. -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lector Inclusivo</title>
+    <link rel="stylesheet" href="Estilos/Index.css" />
+  </head>
+  <body>
+    <!-- MENÚ SUPERIOR -->
+    <nav class="top-header">
+      <a href="#" class="logo">
+        <img src="Imagenes/Logo.png" alt="Logo" />
+      </a>
+
+      <!-- BOTÓN HAMBURGUESA -->
+      <button class="menu-toggle" aria-label="Abrir menú">
+        &#9776;
+        <!-- Ícono de hamburguesa -->
+      </button>
+
+      <!-- MENÚ DE NAVEGACIÓN -->
+      <ul class="menu-horizontal">
+        <li><a href="#">INICIO</a></li>
+        <li class="submenu">
+          <a href="Conocenos.html">CONOCENOS</a>
+          <ul class="menu-vertical">
+            <li><a href="Conocenos.html#quienes-somos">¿Quienes Somos?</a></li>
+            <li><a href="Conocenos.html#que-hacemos">¿Que hacemos?</a></li>
+          </ul>
+        </li>
+        <li><a href="Comunidad.html">COMUNIDAD </a></li>
+        <li><a href="Contactanos.html">CONTACTANOS</a></li>
+        <li><a href="Blog.html">BLOGS</a></li>
+      </ul>
+    </nav>
+
+    <!-- SECCIÓN HISTORIA -->
+    <section class="historia">
+      <div class="historia-fondo">
+        <div class="historia-contenido">
+          <div class="historia-texto">
+            <p>
+              Bienvenido a <strong>Lector Inclusivo</strong><br />
+              Lector Inclusivo es una app móvil diseñada para personas con discapacidad visual que convierte texto impreso, digital e imágenes en descripciones auditivas mediante inteligencia artificial y voz.<br />
+              Descarga nuestra app:
+            </p>
+            <div class="botones-descarga">
+              <button class="btn-descarga">Descarga para IOS</button>
+              <button class="btn-descarga">Descarga para Android</button>
+            </div>
+          </div>
+          <div class="historia-imagen">
+            <div class="imagen-fade">
+              <img src="Imagenes/SUJETO.png" alt="Sujeto con bastón blanco" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="JS/Index.js"></script>
+  </body>
+</html>
