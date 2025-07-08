@@ -5,7 +5,82 @@ body {
   box-sizing: border-box;
   font-family: 'Text Style Atkinson Hyperlegible';
   background: linear-gradient(135deg, #001C39, #004080);
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(0, 28, 57, 1), rgba(0, 64, 128, 0.5));
+  z-index: -1;
+}
+
+/* SECCIÓN caracteristicas */
+.caracteristicas {
+  padding: 3rem 2rem;
+  background: transparent;
   color: white;
+}
+
+.caracteristicas-fondo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.caracteristicas-contenido {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.caracteristica {
+  background-color: transparent;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: background-color 0.3s ease;
+  border: 2px solid #e6c200;
+}
+
+.caracteristica:hover {
+  background-color: #2a3350;
+}
+
+.caracteristica .icono img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.caracteristica h3 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.caracteristica p {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0;
 }
 
 /* CABECERA Y MENÚ SUPERIOR */
@@ -85,23 +160,22 @@ body {
   color: #fff;
 }
 
-/* SECCIÓN HISTORIA */
-.historia {
+/* SECCIÓN descripcion */
+.descripcion {
   padding-top: 6rem;
   padding-bottom: 3rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  background: linear-gradient(135deg, #001C39, #004080);
   color: white;
 }
 
-.historia-fondo {
+.descripcion-fondo {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-.historia-contenido {
+.descripcion-contenido {
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -110,7 +184,7 @@ body {
 }
 
 /* TEXTO */
-.historia-texto {
+.descripcion-texto {
   flex: 1;
   font-size: 1.5rem;
   line-height: 1.6;
@@ -142,7 +216,7 @@ body {
 }
 
 /* IMAGEN */
-.historia-imagen {
+.descripcion-imagen {
   flex: 1;
   position: relative;
 }
@@ -166,6 +240,7 @@ body {
 .menu-toggle {
   display: none;
   font-size: 2.5rem;
+  margin-right: 2rem;
   background: none;
   border: none;
   color: #FFD700;
@@ -176,6 +251,71 @@ body {
 
 .menu-toggle.open {
   color: #001C39;
+}
+
+/* Footer general */
+.footer {
+  background-color: #001C39; /* Fondo oscuro para contraste */
+  color: white;
+  padding: 2rem 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Contenedor flexible para 3 columnas */
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+/* Marca o logotipo */
+.footer-brand {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* Enlaces legales */
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin: 0.3rem 0;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* Redes sociales con íconos */
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
@@ -195,7 +335,8 @@ body {
     z-index: 105;
   }
 
-  .historia-contenido {
+  .descripcion-contenido {
+    margin-top: 5rem;
     flex-direction: column;
   }
 
@@ -204,6 +345,7 @@ body {
     transform: translateX(0);
   }
   .menu-toggle {
+    margin-right: 2rem;
     display: block;
   }
 
@@ -253,5 +395,15 @@ body {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 100;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-social img {
+    margin-bottom: 0.5rem;
   }
 }

@@ -1,4 +1,3 @@
-<!-- Archivo principal de la página de inicio del sitio Lector Inclusivo, que contiene la estructura HTML para la navegación, sección de bienvenida y enlaces a estilos y scripts. -->
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -8,6 +7,9 @@
     <link rel="stylesheet" href="Estilos/Index.css" />
   </head>
   <body>
+    <img src="Imagenes/ImagenFondo.png" alt="Imagen de fondo" class="background-image" />
+    <div class="background-gradient"></div>
+    
     <!-- MENÚ SUPERIOR -->
     <nav class="top-header">
       <a href="#" class="logo">
@@ -22,7 +24,7 @@
 
       <!-- MENÚ DE NAVEGACIÓN -->
       <ul class="menu-horizontal">
-        <li><a href="#">INICIO</a></li>
+        <li><a href="Index.html">INICIO</a></li>
         <li class="submenu">
           <a href="Conocenos.html">CONOCENOS</a>
           <ul class="menu-vertical">
@@ -36,11 +38,11 @@
       </ul>
     </nav>
 
-    <!-- SECCIÓN HISTORIA -->
-    <section class="historia">
-      <div class="historia-fondo">
-        <div class="historia-contenido">
-          <div class="historia-texto">
+    <!-- SECCIÓN descripcion -->
+    <section class="descripcion">
+      <div class="descripcion-fondo">
+        <div class="descripcion-contenido">
+          <div class="descripcion-texto">
             <p>
               Bienvenido a <strong>Lector Inclusivo</strong><br />
               Lector Inclusivo es una app móvil diseñada para personas con discapacidad visual que convierte texto impreso, digital e imágenes en descripciones auditivas mediante inteligencia artificial y voz.<br />
@@ -51,13 +53,114 @@
               <button class="btn-descarga">Descarga para Android</button>
             </div>
           </div>
-          <div class="historia-imagen">
+          <div class="descripcion-imagen">
             <div class="imagen-fade">
               <img src="Imagenes/SUJETO.png" alt="Sujeto con bastón blanco" />
             </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- SECCIÓN caracteristicas -->
+    <section class="caracteristicas">
+      <div class="caracteristicas-fondo">
+        <div class="caracteristicas-contenido">
+          <div class="caracteristica">
+            <div class="icono">
+              <img src="https://cdn-icons-png.flaticon.com/512/14118/14118850.png" alt="Icono" />
+            </div>
+            <h3>Micrófono</h3>
+            <p>Utiliza el micrófono del dispositivo para recibir comandos. Ideal para personas ciegas o con baja visión.</p>
+          </div>
+          <div class="caracteristica">
+            <div class="icono">
+              <img src="https://cdn-icons-png.flaticon.com/512/4399/4399325.png" alt="Icono" />
+            </div>
+            <h3>ALTAVOZ</h3>
+            <p>Accede al altavoz del dispositivo y describe el entorno y el contenido del textos escaneado </p>
+          </div>
+          <div class="caracteristica">
+            <div class="icono">
+              <img src="https://cdn-icons-png.flaticon.com/512/7692/7692415.png" alt="Icono" />
+            </div>
+            <h3>TRADUCTOR</h3>
+            <p>Traduce automaticamente el texto identificado a un idioma de tu preferencia</p>
+          </div>
+          <div class="caracteristica">
+            <div class="icono">
+              <img src="https://cdn-icons-png.flaticon.com/512/17849/17849797.png" alt="Icono" />
+            </div>
+            <h3>INTELIGENCIA ARTIFICIAL</h3>
+            <p>Deja a la IA para reconocer objetos frente a ti y los textos de libros ,recetas ,paneles ,etc</p>
+          </div>
+          <div class="caracteristica">
+            <div class="icono">
+              <img src="https://cdn-icons-png.flaticon.com/512/2923/2923859.png" alt="Icono" />
+            </div>
+            <h3>Filtros</h3>
+            <p>Cambia el color de la interfaz del aplicativo a una paleta que te resulte más comoda</p>
+          </div>
+          <div class="caracteristica">
+            <div class="icono">
+              <img src="https://cdn-icons-png.flaticon.com/512/2965/2965685.png" alt="Icono" />
+            </div>
+            <h3>Cámara</h3>
+            <p>El aplicativo usa la cámara para escanear textos extraidos de libros,recetas,paneles,etc  </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- PIE DE PAGINA -->
+     <section id="footer">
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Logo y nombre de sitio -->
+          <div class="footer-brand">
+            <img
+              src="Imagenes/Logo.png"
+              alt="Logo"
+              class="footer-logo"
+            />
+            <p>LectorInclusivo</p>
+            <small>© 2025 Todos los derechos reservados</small>
+          </div>
+
+          <!-- Enlaces legales -->
+          <div class="footer-links">
+            <h4>Legal</h4>
+            <a href="PDF/TERMINOS Y CONDCIONES.pdf" >Política de Privacidad</a>
+            <!-- Dentro de href llama a un documento pdf con la poltica-->
+            <a href="PDF/TERMINOS Y CONDCIONES.pdf" >Términos y Condiciones</a>
+            <!-- Dentro de href llama a un documento pdf con los terminos y condiciones-->
+            <a href="PDF/TERMINOS Y CONDCIONES.pdf">Protección de Datos</a>
+          </div>
+
+          <!-- Redes sociales con íconos personalizados -->
+          <div class="footer-social">
+            <h4>Síguenos</h4>
+            <a href="https://www.facebook.com/upcedu/?locale=es_LA"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/145/145802.png"
+                alt="Facebook"
+                class="social-icon"
+            /></a>
+            <a href="https://www.instagram.com/upcedu/"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                alt="Instagram"
+                class="social-icon"
+            /></a>
+            <a href="https://x.com/UPCedu"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/3938/3938028.png"
+                alt="Twitter"
+                class="social-icon"
+            /></a>
+          </div>
+        </div>
+      </footer>
     </section>
 
     <script src="JS/Index.js"></script>

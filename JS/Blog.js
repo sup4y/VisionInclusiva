@@ -22,16 +22,18 @@ const submenuLinks = document.querySelectorAll('.menu-vertical li a');
 
 submenuLinks.forEach(link => {
   link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
-    }
-    // Close menu after navigation
-    if (menuHorizontal.classList.contains('active')) {
-      menuHorizontal.classList.remove('active');
-      document.body.classList.remove('overlay-active');
+    const href = link.getAttribute('href');
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+      if (menuHorizontal.classList.contains('active')) {
+        menuHorizontal.classList.remove('active');
+        document.body.classList.remove('overlay-active');
+      }
     }
   });
 });

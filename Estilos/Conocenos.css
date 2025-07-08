@@ -1,4 +1,8 @@
 /* RESET BÁSICO */
+html {
+  scroll-padding-top: 5rem;
+}
+
 body {
   margin: 0;
   padding: 0.5rem;
@@ -6,6 +10,26 @@ body {
   font-family: 'Text Style Atkinson Hyperlegible';
   background: linear-gradient(135deg, #001C39, #004080);
   color: white;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(0, 28, 57, 1), rgba(0, 64, 128, 0.5));
+  z-index: -1;
 }
 
 /* CABECERA Y MENÚ SUPERIOR */
@@ -84,26 +108,21 @@ body {
 }
 
 /* SECCIÓN ¿QUIENES SOMOS? Y ¿QUE HACEMOS? */
-.quienes-somos, .que-hacemos {
-  padding-top: 6rem;
+.quienesSomos, .queHacemos {
+  padding-top: 3rem;
   padding-bottom: 3rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  background: linear-gradient(135deg, #001C39, #004080);
   color: white;
 }
 
-.que-hacemos h2 {
-  text-align: right;
-}
-
-.historia-fondo {
+.quienesSomos-fondo, .queHacemos-fondo {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-.historia-contenido {
+.quienesSomos-contenido, .queHacemos-contenido {
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -111,24 +130,28 @@ body {
   justify-content: space-between;
 }
 
-/* Invertir el diseño para la sección que-hacemos: imagen a la izquierda, texto a la derecha */
-.que-hacemos .historia-contenido {
-  flex-direction: row-reverse;
-}
-
-/* TEXTO */
-.quienes-texto, .hacemos-texto {
+.quienesSomos-texto, .queHacemos-texto {
   flex: 1;
-  font-size: 1.5rem;
-  line-height: 1.6;
+  font-size: 1.6rem;
+  line-height: 1.7;
   text-align: justify;
   max-width: 600px;
 }
 
-/* IMAGEN */
-.quienes-imagen, .hacemos-imagen {
+.quienesSomos-texto h2, .queHacemos-texto h2 {
+  font-size: 3.5rem;
+  color: #FFD700;
+  margin-bottom: 1rem;
+  font-weight: 900;
+}
+
+.quienesSomos-imagen, .queHacemos-imagen {
   flex: 1;
   position: relative;
+}
+
+.queHacemos-contenido {
+  flex-direction: row-reverse;
 }
 
 .imagen-fade {
@@ -150,6 +173,7 @@ body {
 .menu-toggle {
   display: none;
   font-size: 2.5rem;
+  margin-right: 2rem;
   background: none;
   border: none;
   color: #FFD700;
@@ -160,6 +184,100 @@ body {
 
 .menu-toggle.open {
   color: #001C39;
+}
+
+/* Footer general */
+.footer {
+  background-color: #001C39; 
+  color: white;
+  padding: 2rem 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* SECCIÓN video */
+.video {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: white;
+}
+
+.video-fondo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.video-contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-contenido iframe {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+/* Contenedor flexible para 3 columnas */
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+/* Marca o logotipo */
+.footer-brand {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* Enlaces legales */
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin: 0.3rem 0;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* Redes sociales con íconos */
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
@@ -179,16 +297,13 @@ body {
     z-index: 105;
   }
 
-  .historia-contenido {
-    flex-direction: column;
-  }
-
   .menu-horizontal.active {
     display: flex;
     transform: translateX(0);
   }
 
   .menu-toggle {
+    margin-right: 2rem;
     display: block;
   }
 
@@ -238,5 +353,40 @@ body {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 100;
+  }
+
+  .quienesSomos {
+    margin-top: 5rem;
+    padding-top: 5rem;
+  }
+
+  .quienes-texto h2 {
+    font-size: 2.5rem;
+  }
+
+  .queHacemos {
+    margin-top: 5rem;
+    padding-top: 5rem;
+  }
+
+  .hacemos-texto h2 {
+    font-size: 2.5rem;
+  }
+
+  .queHacemos-contenido {
+    flex-direction: column;
+  }
+
+  .quienesSomos-contenido {
+    flex-direction: column;
+  }
+    .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-social img {
+    margin-bottom: 0.5rem;
   }
 }

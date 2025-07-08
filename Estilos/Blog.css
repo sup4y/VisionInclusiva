@@ -1,4 +1,3 @@
-/* Estilos/blog.css */
 
 /* RESET BÁSICO */
 body {
@@ -8,6 +7,26 @@ body {
   font-family: 'Text Style Atkinson Hyperlegible';
   background: linear-gradient(135deg, #001C39, #004080);
   color: white;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(0, 28, 57, 1), rgba(0, 64, 128, 0.5));
+  z-index: -1;
 }
 
 /* CABECERA Y MENÚ SUPERIOR */
@@ -86,13 +105,14 @@ body {
 
 /* SECCIÓN BLOG */
 .blog {
-  padding-top: 7rem; /* Ajustado para que no quede debajo del header fijo */
+  padding-top: 10rem; 
   padding-bottom: 3rem;
   padding-left: 2rem;
   padding-right: 2rem;
   color: white;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto; /* Centrar la sección */
+  min-height: 800px;
 }
 
 /* TÍTULO DE LA SECCIÓN BLOG */
@@ -119,7 +139,7 @@ body {
 
 .blog-texto p {
   margin-bottom: 1.2rem;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 
 .blog-imagen {
@@ -143,6 +163,7 @@ body {
 .menu-toggle {
   display: none;
   font-size: 2.5rem;
+  margin-right: 2rem;
   background: none;
   border: none;
   color: #FFD700;
@@ -155,7 +176,72 @@ body {
   color: #001C39;
 }
 
-@media (max-width: 768px) {
+/* Footer general */
+.footer {
+  background-color: #001C39; /* Fondo oscuro para contraste */
+  color: white;
+  padding: 2rem 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Contenedor flexible para 3 columnas */
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+/* Marca o logotipo */
+.footer-brand {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* Enlaces legales */
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin: 0.3rem 0;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* Redes sociales con íconos */
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px), (max-width: 480px) {
   .menu-horizontal {
     display: none;
     flex-direction: column;
@@ -188,6 +274,7 @@ body {
   }
 
   .menu-toggle {
+    margin-right: 2rem;
     display: block;
   }
 
@@ -239,6 +326,7 @@ body {
   }
 
   .blog {
+    margin-top: 5rem;
     padding-top: 6rem;
   }
 
@@ -250,9 +338,7 @@ body {
   .blog-texto p {
     font-size: 1rem;
   }
-}
 
-@media (max-width: 480px) {
   .blog h2 {
     font-size: 2rem;
   }
@@ -270,5 +356,14 @@ body {
   }
   .top-header {
     padding: 0 1.5rem 0 1rem;
+  }
+    .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-social img {
+    margin-bottom: 0.5rem;
   }
 }

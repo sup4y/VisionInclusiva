@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="Estilos/Conocenos.css" />
   </head>
   <body>
+    <img src="Imagenes/ImagenFondo.png" alt="Imagen de fondo" class="background-image" />
+    <div class="background-gradient"></div>
     <!-- MENÚ SUPERIOR -->
     <nav class="top-header">
       <a href="#" class="logo">
@@ -25,8 +27,8 @@
         <li class="submenu">
           <a href="Conocenos.html">CONOCENOS</a>
         <ul class="menu-vertical">
-          <li><a href="#quienes-somos">¿Quienes Somos?</a></li>
-          <li><a href="#que-hacemos">¿Que hacemos?</a></li>
+          <li><a href="#quienesSomos">¿Quienes Somos?</a></li>
+          <li><a href="#queHacemos">¿Que hacemos?</a></li>
         </ul>
         </li>
         <li><a href="Comunidad.html">COMUNIDAD </a></li>
@@ -36,16 +38,16 @@
     </nav>
 
     <!-- SECCIÓN ¿QUIENES SOMOS? -->
-<section id="quienes-somos" class="quienes-somos">
-      <div class="historia-fondo">
-        <div class="historia-contenido">
-          <div class="quienes-texto">
+<section id="quienesSomos" class="quienesSomos">
+      <div class="quienesSomos-fondo">
+        <div class="quienesSomos-contenido">
+          <div class="quienesSomos-texto">
             <h2>¿Quiénes Somos?</h2>
             <p>
               Somos un equipo dedicado a crear soluciones inclusivas para personas con discapacidad visual. Nuestra misión es facilitar el acceso a la información mediante tecnología innovadora y accesible.
             </p>
           </div>
-          <div class="quienes-imagen">
+          <div class="quienesSomos-imagen">
             <div class="imagen-fade">
               <img src="Imagenes/QuienesSomos.png" alt="Quienes Somos" />
             </div>
@@ -55,16 +57,16 @@
     </section>
 
     <!-- SECCIÓN ¿QUE HACEMOS? -->
-<section id="que-hacemos" class="que-hacemos">
-      <div class="historia-fondo">
-        <div class="historia-contenido">
-          <div class="hacemos-texto">
+<section id="queHacemos" class="queHacemos">
+      <div class="queHacemos-fondo">
+        <div class="queHacemos-contenido">
+          <div class="queHacemos-texto">
             <h2>¿Qué hacemos?</h2>
             <p>
               Desarrollamos aplicaciones móviles que convierten texto impreso, digital e imágenes en descripciones auditivas utilizando inteligencia artificial y tecnología de voz para mejorar la autonomía y calidad de vida de nuestros usuarios.
             </p>
           </div>
-          <div class="hacemos-imagen">
+          <div class="queHacemos-imagen">
             <div class="imagen-fade">
               <img src="Imagenes/porquelohacemos.png" alt="Porque lo hacemos" />
             </div>
@@ -73,6 +75,65 @@
       </div>
     </section>
 
+    <!-- SECCIÓN video -->
+    <section id="video" class="video">
+      <div class="video-fondo">
+        <div class="video-contenido">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/-Vkf6tvhpAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+<!-- PIE DE PAGINA -->
+<section id="footer">
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo y nombre de sitio -->
+      <div class="footer-brand">
+        <img
+          src="Imagenes/Logo.png"
+          alt="Logo"
+          class="footer-logo"
+        />
+        <p>LectorInclusivo</p>
+        <small>© 2025 Todos los derechos reservados</small>
+      </div>
+
+      <!-- Enlaces legales -->
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <a href="PDF/TERMINOS Y CONDCIONES.pdf">Política de Privacidad</a>
+        <!-- Dentro de href llama a un documento pdf con la poltica-->
+        <a href="PDF/TERMINOS Y CONDCIONES.pdf">Términos y Condiciones</a>
+        <!-- Dentro de href llama a un documento pdf con los terminos y condiciones-->
+        <a href="PDF/TERMINOS Y CONDCIONES.pdf">Protección de Datos</a>
+      </div>
+
+      <!-- Redes sociales con íconos personalizados -->
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+            <a href="https://www.facebook.com/upcedu/?locale=es_LA" target="_blank" rel="noopener noreferrer"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/145/145802.png"
+                alt="Facebook"
+                class="social-icon"
+            /></a>
+            <a href="https://www.instagram.com/upcedu/" target="_blank" rel="noopener noreferrer"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                alt="Instagram"
+                class="social-icon"
+            /></a>
+            <a href="https://x.com/UPCedu" target="_blank" rel="noopener noreferrer"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/3938/3938028.png"
+                alt="Twitter"
+                class="social-icon"
+            /></a>
+      </div>
+    </div>
+  </footer>
+</section>
     <script src="JS/Conocenos.js"></script>
   </body>
 </html>

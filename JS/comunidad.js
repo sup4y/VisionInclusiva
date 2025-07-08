@@ -1,4 +1,5 @@
 
+
 const menuToggle = document.querySelector('.menu-toggle');
 const menuHorizontal = document.querySelector('.menu-horizontal');
 
@@ -22,34 +23,51 @@ const submenuLinks = document.querySelectorAll('.menu-vertical li a');
 
 submenuLinks.forEach(link => {
   link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
-    }
-    // Close menu after navigation
-    if (menuHorizontal.classList.contains('active')) {
-      menuHorizontal.classList.remove('active');
-      document.body.classList.remove('overlay-active');
+    const href = link.getAttribute('href');
+    if (href.startsWith('#')) { 
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+      if (menuHorizontal.classList.contains('active')) {
+        menuHorizontal.classList.remove('active');
+        document.body.classList.remove('overlay-active');
+      }
     }
   });
 });
 
+const flechaIzquierda = document.getElementById('flecha-izquierda');
+const flechaDerecha = document.getElementById('flecha-derecha');
+const historiasContainer = document.querySelector('.historias-container');
 
-// Evento al enviar el formulario de contacto
-document.getElementById("formularioContacto").addEventListener("submit", function (e) {
-  e.preventDefault(); // Evita el envío real del formulario
+const historias = Array.from(historiasContainer.querySelectorAll('.historia'));
+let currentIndex = 0;
 
-  // Muestra el mensaje de confirmación
-  const mensaje = document.getElementById("mensajeEnviado");
-  mensaje.style.display = "block";
+function showHistoria(index) {
+  historias.forEach((historia, i) => {
+    if (i === index) {
+      historia.style.display = 'flex';
+      historia.classList.add('flex');
+    } else {
+      historia.style.display = 'none';
+      historia.classList.remove('flex');
+    }
+  });
+}
 
-  // Opcional: limpiar el formulario
-  this.reset();
+showHistoria(currentIndex);
 
-  // Ocultar mensaje después de 5 segundos
-  setTimeout(() => {
-    mensaje.style.display = "none";
-  }, 5000);
+flechaIzquierda.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + historias.length) % historias.length;
+  showHistoria(currentIndex);
 });
+
+flechaDerecha.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % historias.length;
+  showHistoria(currentIndex);
+});
+
+

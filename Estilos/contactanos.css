@@ -8,6 +8,26 @@ body {
   color: white;
 }
 
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(0, 28, 57, 1), rgba(0, 64, 128, 0.5));
+  z-index: -1;
+}
+
 /* CABECERA Y MENÚ SUPERIOR */
 .top-header {
   position: fixed;
@@ -97,23 +117,23 @@ body {
 
 /* TÍTULO DE LA SECCIÓN */
 .contacto h2 {
-  font-size: 3.5rem; /* Tamaño grande */
-  color: #FFD700; /* Amarillo */
+  font-size: 3.5rem;
+  color: #FFD700;
   margin-bottom: 2rem; /* Más espacio debajo del título */
   font-weight: 900;
-  text-align: center; /* Centrar título de la sección */
+  text-align: center; 
 }
 
 /* CONTENIDO DEL FORMULARIO Y TEXTO */
 .contacto-contenido {
   display: flex;
   flex-direction: row;
-  gap: 3rem; /* Aumentar espacio entre formulario e instrucciones */
+  gap: 3rem;
 }
 
 /* FORMULARIO */
 .formulario-contacto {
-  flex: 2; /* Dar más espacio al formulario */
+  flex: 2; 
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -137,7 +157,7 @@ input[type="tel"],
 input[type="email"],
 select,
 textarea {
-  padding: 0.75rem; /* Aumentar padding */
+  padding: 0.75rem; 
   border: 1px solid #FFD700; /* Amarillo */
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
@@ -154,26 +174,26 @@ textarea::placeholder {
 }
 
 select {
-  appearance: none; /* Quitar estilo por defecto del navegador */
+  appearance: none;
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 1.5em;
 }
 
 select option {
-  background-color: white; /* Fondo blanco para las opciones */
-  color: black; /* Color de texto oscuro para las opciones */
+  background-color: white; 
+  color: black; 
 }
 
 textarea {
-  resize: vertical; /* Permitir redimensionar solo verticalmente */
+  resize: vertical; 
   min-height: 100px;
 }
 
 /* GRUPO DE CHECKBOXES */
 .checkboxes {
   display: flex;
-  gap: 1.5rem; /* Espacio entre checkboxes */
+  gap: 1.5rem; 
   align-items: center;
   margin-top: 0.5rem;
 }
@@ -181,15 +201,15 @@ textarea {
 .checkboxes label {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* Espacio entre el checkbox y su texto */
+  gap: 0.5rem;
   margin-bottom: 0;
-  font-weight: normal; /* Peso normal para etiquetas de checkbox */
+  font-weight: normal; 
 }
 
 .checkboxes input[type="checkbox"] {
-  width: 1.2em; /* Tamaño del checkbox */
+  width: 1.2em; 
   height: 1.2em;
-  accent-color: #FFD700; /* Color del check y fondo cuando está marcado */
+  accent-color: #FFD700; 
 }
 
 /* ESTILO DEL BOTÓN DE ENVÍO */
@@ -226,10 +246,10 @@ button[type="submit"]:hover {
 /* MENSAJE ENVIADO */
 .mensaje-enviado {
   margin-top: 1rem;
-  color: #FFD700; /* Amarillo */
+  color: #FFD700; 
   font-weight: bold;
   padding: 0.75rem;
-  background-color: rgba(0, 28, 57, 0.8); /* Fondo oscuro semi-transparente */
+  background-color: rgba(0, 28, 57, 0.8);
   border-left: 4px solid #FFD700;
   border-radius: 0.3rem;
 }
@@ -238,20 +258,86 @@ button[type="submit"]:hover {
 .menu-toggle {
   display: none;
   font-size: 2.5rem;
+  margin-right: 2rem;
   background: none;
   border: none;
   color: #FFD700;
   cursor: pointer;
   z-index: 110;
-  position: relative; /* Para asegurar que esté sobre otros elementos si es necesario */
+  position: relative;
 }
 
 .menu-toggle.open {
-  color: #001C39; /* Color cuando el menú está abierto */
+  color: #001C39; 
 }
 
-@media (max-width: 768px) {
-    .menu-horizontal {
+/* Footer general */
+.footer {
+  background-color: #001C39; 
+  color: white;
+  padding: 2rem 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Contenedor flexible para 3 columnas */
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+/* Marca o logotipo */
+.footer-brand {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* Enlaces legales */
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin: 0.3rem 0;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* Redes sociales con íconos */
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px), (max-width: 480px) {
+  .menu-horizontal {
     display: none;
     flex-direction: column;
     position: fixed;
@@ -277,6 +363,7 @@ button[type="submit"]:hover {
   }
 
   .menu-toggle {
+    margin-right: 2rem;
     display: block;
   }
 
@@ -330,42 +417,41 @@ button[type="submit"]:hover {
 
   /* Ajustes específicos para la sección de contacto en móviles */
   .contacto {
-    padding-top: 6rem; /* Menos padding superior en móviles */
+    margin-top: 5rem;
+    padding-top: 6rem; 
   }
 
   .contacto h2 {
-    font-size: 2.5rem; /* Tamaño de título más pequeño */
+    font-size: 2.5rem; 
     margin-bottom: 1.5rem;
   }
 
   .contacto-contenido {
-    flex-direction: column; /* Apilar formulario e instrucciones */
+    flex-direction: column; 
     gap: 2rem;
   }
 
   .formulario-contacto {
-    flex: none; /* Resetear flex grow */
+    flex: none; 
     width: 100%;
   }
 
   .contacto-instrucciones {
-    flex: none; /* Resetear flex grow */
+    flex: none; 
     width: 100%;
-    text-align: center; /* Centrar texto de instrucciones */
+    text-align: center; 
   }
 
   .checkboxes {
-    flex-direction: column; /* Apilar checkboxes */
+    flex-direction: column; 
     align-items: flex-start;
     gap: 0.5rem;
   }
 
   button[type="submit"] {
-    align-self: center; /* Centrar botón en móviles */
+    align-self: center; 
   }
-}
 
-@media (max-width: 480px) {
   .contacto h2 {
     font-size: 2rem;
   }
@@ -375,10 +461,20 @@ button[type="submit"]:hover {
   select,
   textarea,
   button[type="submit"] {
-    font-size: 0.9rem; /* Reducir un poco más la fuente en móviles muy pequeños */
+    font-size: 0.9rem; 
     padding: 0.6rem;
   }
   .menu-horizontal li a {
     font-size: 1.1rem;
+  }
+
+    .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-social img {
+    margin-bottom: 0.5rem;
   }
 }

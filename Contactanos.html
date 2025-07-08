@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="Estilos/contactanos.css">
 </head>
 <body>
-    
+    <img src="Imagenes/ImagenFondo.png" alt="Imagen de fondo" class="background-image" />
+    <div class="background-gradient"></div>
     <!-- MENÚ SUPERIOR -->
     <nav class="top-header">
       <a href="#" class="logo">
@@ -25,8 +26,8 @@
         <li class="submenu">
           <a href="Conocenos.html">CONOCENOS</a>
           <ul class="menu-vertical">
-            <li><a href="Conocenos.html#quienes-somos">¿Quienes Somos?</a></li>
-            <li><a href="Conocenos.html#que-hacemos">¿Que hacemos?</a></li>
+            <li><a href="Conocenos.html#quienesSomos">¿Quienes Somos?</a></li>
+            <li><a href="Conocenos.html#queHacemos">¿Que hacemos?</a></li>
           </ul>
         </li>
         <li><a href="Comunidad.html">COMUNIDAD</a></li>
@@ -43,21 +44,12 @@
         <form class="formulario-contacto" id="formularioContacto">
           <div class="form-grupo">
             <label for="nombres">Nombres:</label>
-            <input type="text" id="nombres" name="nombres" required />
+            <input type="text" id="nombres" name="nombres"  />
           </div>
 
           <div class="form-grupo">
             <label for="apellidos">Apellidos:</label>
-            <input type="text" id="apellidos" name="apellidos" required />
-          </div>
-
-          <div class="form-grupo">
-            <label for="tipoDoc">Tipo de Documento:</label>
-            <select id="tipoDoc" name="tipoDoc">
-              <option value="dni">DNI</option>
-              <option value="pasaporte">Pasaporte</option>
-              <option value="carnet">Carnet de Extranjería</option>
-            </select>
+            <input type="text" id="apellidos" name="apellidos"  />
           </div>
 
           <div class="form-grupo">
@@ -76,7 +68,12 @@
 
           <div class="form-grupo">
             <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email"  />
+          </div>
+
+          <div class="form-grupo">
+            <label for="modeloTelefono">Modelo Telefono:</label>
+            <input type="text" id="modeloTelefono" name="modeloTelefono"  />
           </div>
 
           <div class="form-grupo">
@@ -121,6 +118,58 @@
         </div>
       </div>
     </section>
+
+
+<!-- PIE DE PAGINA -->
+<section id="footer">
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo y nombre de sitio -->
+      <div class="footer-brand">
+        <img
+          src="Imagenes/Logo.png"
+          alt="Logo"
+          class="footer-logo"
+        />
+        <p>LectorInclusivo</p>
+        <small>© 2025 Todos los derechos reservados</small>
+      </div>
+
+      <!-- Enlaces legales -->
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <a href="PDF/TERMINOS Y CONDCIONES.pdf">Política de Privacidad</a>
+        <!-- Dentro de href llama a un documento pdf con la poltica-->
+        <a href="PDF/TERMINOS Y CONDCIONES.pdf">Términos y Condiciones</a>
+        <!-- Dentro de href llama a un documento pdf con los terminos y condiciones-->
+        <a href="PDF/TERMINOS Y CONDCIONES.pdf">Protección de Datos</a>
+      </div>
+
+      <!-- Redes sociales con íconos personalizados -->
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+            <a href="https://www.facebook.com/upcedu/?locale=es_LA" target="_blank" rel="noopener noreferrer"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/145/145802.png"
+                alt="Facebook"
+                class="social-icon"
+            /></a>
+            <a href="https://www.instagram.com/upcedu/" target="_blank" rel="noopener noreferrer"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                alt="Instagram"
+                class="social-icon"
+            /></a>
+            <a href="https://x.com/UPCedu" target="_blank" rel="noopener noreferrer"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/3938/3938028.png"
+                alt="Twitter"
+                class="social-icon"
+            /></a>
+      </div>
+    </div>
+  </footer>
+</section>
 <script src="JS/contactanos.js"></script>
 </body>
 </html>
